@@ -1,0 +1,132 @@
+//ArrayList
+using System;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            ArrayList a1=new ArrayList();
+            a1.Add("remove");
+            a1.Add("hii");
+            a1.Add("hello");
+            for(int i=0;i<a1.Count;i++){
+                Console.WriteLine(i+" : "+a1[i]);
+            }
+            a1.Remove("remove");
+            Console.WriteLine("after Removing: ");
+            for(int i=0;i<a1.Count;i++){
+                Console.WriteLine(i+" : "+a1[i]);
+            }
+            // Console.WriteLine("it contains or not : "+a1.IsReadOnly);
+            // Console.WriteLine("Redaonly or not : "+a1.Capacity);
+        }
+    }
+}
+//hashtable
+using System;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            Hashtable ht=new Hashtable();
+            ht.Add(1,"hii");
+            ht.Add(2,"hello");
+            ht.Add(3,"hyy");
+            foreach (var key in ht.Keys){
+                Console.WriteLine("{0} ---> {1}",key,ht[key]);
+            }
+            ht.Remove(3);
+            foreach (var key in ht.Keys){
+                Console.WriteLine("{0} ---> {1}",key,ht[key]);
+            }
+        }
+    }
+}
+//Sorted List
+using System;
+using System.IO;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            SortedList s1=new SortedList();
+            s1.Add("18","hiii");
+            s1.Add("12","hello");
+            s1.Add("78","hyy");
+            for(int i=0;i<s1.Count;i++){
+                Console.WriteLine("{0}  ---> {1}",s1.GetKey(i),s1.GetByIndex(i));
+            }
+            Console.WriteLine(s1.Count);
+            Console.WriteLine(s1.Capacity);
+            Console.WriteLine(s1.IsReadOnly);
+            Console.WriteLine(s1.IsFixedSize);
+            Console.WriteLine("After deleting: ");
+            s1.Clear();
+        }
+    }
+}
+//stack
+using System;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            Stack st=new Stack();
+            st.Push("Usa");
+            st.Push("India");
+            st.Push("Canada");
+            foreach(var i in st){
+                Console.WriteLine(i);
+            }
+            Console.WriteLine(st.Peek());
+            Console.WriteLine(st.Pop());
+            Console.WriteLine(st.Contains("Ger"));
+        }
+    }
+}
+//queue
+using System;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            Queue q=new Queue();
+            q.Enqueue(0);
+            q.Enqueue(1);
+            q.Enqueue(2);
+            foreach(var i in q){
+                Console.WriteLine(i);
+            }
+            Console.WriteLine(q.Peek());
+            Console.WriteLine(q.Contains(3));
+            //Console.WriteLine(q.IsReadOnly);
+        }
+    }
+}
+//BitArray
+using System;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            BitArray b=new BitArray(2);
+            BitArray b2=new BitArray(2);
+            b[0]=true;
+            b[1]=false;
+            b2[0]=true;
+            b2[1]=false;
+            foreach(bool i in b){
+                Console.WriteLine(i+ " ");
+            }
+            foreach(bool i in b2){
+                Console.WriteLine(i+ " ");
+            }
+            IEnumerable Enum= b.Xor(b2);
+            foreach(Object i in Enum){
+                Console.WriteLine(i+ " ");
+            }
+            Console.WriteLine(b.Equals(b2));
+            Console.WriteLine(b.IsReadOnly);
+            Console.WriteLine(b.IsSynchronized);
+        }
+    }
+}

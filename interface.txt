@@ -1,0 +1,25 @@
+//interface
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace App1{
+    public class program{
+        public interface Animal{
+            void play();
+            void playSound();
+        }
+        public class Bog: Animal{
+            public void play(){
+                Console.WriteLine("Hello");
+            }
+            public void playSound(){
+                Console.WriteLine("Hiii");
+            }
+        }
+        public static void Main(string[] args){
+            Bog b=new Bog();
+            b.play();
+            b.playSound();
+        }
+    }
+}

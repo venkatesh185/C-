@@ -1,0 +1,30 @@
+//Namespace
+using System;
+using System.Linq;
+using System.Collections;
+using first;
+using second;
+namespace first{
+    public class Namespace1{
+        public void Task(){
+            Console.WriteLine("Inside....");
+        }
+    }
+}
+namespace second{
+    public class Namespace2{
+        public void Task(){
+            Console.WriteLine("Inside2....");
+        }
+    }
+}
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            Namespace1 fns=new Namespace1();
+            Namespace2 sns=new Namespace2();
+            fns.Task();
+            sns.Task();
+        }
+    }
+}

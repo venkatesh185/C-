@@ -1,0 +1,21 @@
+//preprossesor directives
+#define DEBUG
+#define VC_V10
+using System;
+using System.Collections;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            #if (DEBUG && !VC_V10)
+                Console.WriteLine("hii");
+            #elif (!DEBUG && VC_V10)
+                Console.WriteLine("Hello");
+            #elif(DEBUG && VC_V10)
+                Console.WriteLine("heeeee");
+            #else
+                Console.WriteLine("hello there..!");
+            #endif
+        }
+    }
+}
+

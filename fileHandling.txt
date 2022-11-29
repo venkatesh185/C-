@@ -1,0 +1,37 @@
+//file
+using System;
+using System.IO;
+using System.Collections;
+namespace App1{
+    public class program{
+        public void ReadData(){
+            FileStream fs=new FileStream("c:\\text.txt",FileMode.Open,FileAccess.Read);
+            StreamReader sr=new FileReader(fs);
+            Console.WriteLine("the contets of the file are: ");
+            sr.BaseStream.Seek(0,SeekOrigin.Begin);
+            string str=sr.ReadLine();
+            while(str!=null){
+                Console.WriteLine();
+                str=sr.ReadLine();
+            }
+            Console.ReadLine();
+            sr.Close();
+            fs.Close();
+        }
+        public void WriteData(){
+            FileStream fs= new FileStream("c:\\text.txt",FileMode.Append,FileAccess.Write);
+            StreamWriter sw=new FileWriter(fs);
+            Console.WriteLine("Read The values of the file: ");
+            string str=Console.ReadLine();
+            sw.ReadLine();
+            sw.Flush();
+            sw.Close();
+            fr.Close();
+        }
+        public static void Main(string[] args){
+          program p=new program();
+          p.WriteData();
+          p.ReadData();
+        }
+    }
+}

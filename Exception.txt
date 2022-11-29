@@ -1,0 +1,48 @@
+//exception handling
+using System;
+using System.Collections.Generic;
+namespace App1{
+    public class program{
+        public static void Main(string[] args){
+            int div=0;
+            int by=0;
+            try{
+                div=100/by;
+                Console.WriteLine("Error");
+            }
+            catch(DivideByZeroException dbz){
+                Console.WriteLine("DivideBy Zero ERror"+dbz);
+            }
+            catch(Exception e){
+                Console.WriteLine("Exception occured "+e);
+            }
+            finally{
+                Console.WriteLine("Finallay block will executed ");
+            }
+            Console.WriteLine($"final rsult is {div}");
+        }
+    }
+}
+//custom Exception
+using System;
+using System.Collections;
+namespace App1{
+    class MyException: Exception{
+        public MyException(string str){
+            Console.WriteLine("hii"+str);
+        }
+    }
+    public class program{
+        public static void Main(string[] args){
+            try{
+                throw new MyException("hello");
+            }
+            catch(Exception e){
+                Console.WriteLine("Another is caught here: "+e.ToString());
+            }
+            finally{
+                Console.WriteLine("hello there");
+            }
+        }
+    }
+}
